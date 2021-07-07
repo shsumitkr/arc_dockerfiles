@@ -7,12 +7,12 @@ LABEL TAG="0.2"
 ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get install -y build-essential cmake pkg-config \
+RUN apt-get update && apt-get install -y build-essential cmake pkg-config autoconf automake \
   libtool libtbb2 zlib1g-dev libfreetype6-dev libharfbuzz-dev libjbig2dec0-dev \
   libswscale-dev libjpeg-dev libpng-dev libopenjp2-7-dev libtiff-dev wget \
   openjdk-11-jdk-headless python3-dev python3-pip libmupdf-dev vim
 
-RUN pip install pip numpy==1.19.3 opencv-contrib-python-headless==4.5.2.54 \
+RUN pip install pip numpy==1.19.5 opencv-contrib-python-headless==4.5.2.54 \
   scikit-image scikit-learn pygments==2.4.1 statsmodels pandas Pillow tqdm PyMuPDF \
   flask gunicorn jupyter sympy nose matplotlib seaborn 
 
